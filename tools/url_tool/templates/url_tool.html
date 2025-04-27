@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Encoder/Decoder</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('url_tool.static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>URL Encoder/Decoder</h1>
+    <form method="POST">
+        <label for="url_input">Enter URL:</label>
+        <input type="text" id="url_input" name="url_input" size="50">
+        <br><br>
+        <input type="submit" name="action" value="encode">
+        <input type="submit" name="action" value="decode">
+    </form>
+
+    {% if encoded_url %}
+        <h2>Encoded URL:</h2>
+        <textarea rows="5" cols="60">{{ encoded_url }}</textarea>
+    {% endif %}
+
+    {% if decoded_url %}
+        <h2>Decoded URL:</h2>
+        <textarea rows="5" cols="60">{{ decoded_url }}</textarea>
+    {% endif %}
+
+    <script type="text/javascript" src="{{ url_for('url_tool.static', filename='js/script.js') }}"></script>
+</body>
+</html>
